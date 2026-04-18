@@ -1797,6 +1797,85 @@ input, select, textarea { font-family: inherit; }
 
 }
 
-@media (max-width: 768px){
-  /* mobile/tablet fixes */
+/* =====================================
+   INDEX PAGE CUTTING FIX
+===================================== */
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Better mobile viewport */
+#hero {
+  min-height: 100svh;
+  height: auto;
+  padding: 110px 0 60px;
+}
+
+/* Hero container */
+.hero-content {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 1rem;
+  padding-top: 0;
+  text-align: center;
+}
+
+/* Prevent title cutting */
+.hero-title {
+  width: 100%;
+  overflow-wrap: break-word;
+}
+
+.title-line-1,
+.title-line-2,
+.title-line-3 {
+  letter-spacing: 1px !important;
+  word-break: break-word;
+}
+
+/* Better mobile text */
+@media (max-width: 768px) {
+
+  .title-line-1 {
+    font-size: 2rem !important;
+  }
+
+  .title-line-2 {
+    font-size: 2.4rem !important;
+  }
+
+  .title-line-3 {
+    font-size: 2rem !important;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-buttons a {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-scroll-indicator {
+    display: none;
+  }
+}
+
+/* Floating icons can cause overflow */
+.hero-floating-elements {
+  overflow: hidden;
 }
