@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Steel Point | Banswara</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div id="preloader">
+        <div class="preloader-content">
+            <div class="steel-logo-anim"><span class="logo-s">S</span><span class="logo-p">P</span></div>
+            <div class="preloader-bar"><div class="preloader-fill"></div></div>
+            <p class="preloader-text">STEEL POINT</p>
+        </div>
+    </div>
+
+    <div id="particles-bg"></div>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-icon"><i class="fas fa-industry"></i></div>
+                <div class="logo-text">
+                    <span class="logo-main">STEEL POINT</span>
+                    <span class="logo-sub">Manufacturing & Wholesale</span>
+                </div>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link"><span class="nav-icon"><i class="fas fa-home"></i></span><span>Home</span></a>
+                <a href="about.html" class="nav-link"><span class="nav-icon"><i class="fas fa-info-circle"></i></span><span>About</span></a>
+                <a href="products.html" class="nav-link"><span class="nav-icon"><i class="fas fa-cubes"></i></span><span>Products</span></a>
+                <a href="gallery.html" class="nav-link active"><span class="nav-icon"><i class="fas fa-images"></i></span><span>Gallery</span></a>
+                <a href="contact.html" class="nav-link"><span class="nav-icon"><i class="fas fa-envelope"></i></span><span>Contact</span></a>
+            </div>
+            <div class="nav-cta"><a href="contact.html" class="btn-nav-cta">Get Quote</a></div>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <div class="page-banner">
+        <div class="banner-overlay"></div>
+        <div class="banner-content" data-aos="fade-up">
+            <h1>Photo & Video <span class="text-gradient">Gallery</span></h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Gallery</span>
+            </div>
+        </div>
+        <div class="banner-shapes">
+            <div class="shape s1"></div>
+            <div class="shape s2"></div>
+            <div class="shape s3"></div>
+        </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="section-container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">MEDIA</span>
+                <h2 class="section-title">Our Work in <span class="text-gradient">Pictures</span></h2>
+                <p class="section-subtitle">A visual journey through our manufacturing excellence</p>
+            </div>
+
+            <!-- Gallery Tabs -->
+            <div class="gallery-tabs" data-aos="fade-up">
+                <button class="gallery-tab active" data-tab="photos">
+                    <i class="fas fa-images"></i> Photos
+                </button>
+                <button class="gallery-tab" data-tab="videos">
+                    <i class="fas fa-video"></i> Videos
+                </button>
+            </div>
+
+            <!-- Photo Gallery -->
+            <div class="gallery-content" id="photosTab">
+                <!-- Filter -->
+                <div class="gallery-filter" data-aos="fade-up">
+                    <button class="gal-filter-btn active" data-gfilter="all">All</button>
+                    <button class="gal-filter-btn" data-gfilter="factory">Factory</button>
+                    <button class="gal-filter-btn" data-gfilter="products">Products</button>
+                    <button class="gal-filter-btn" data-gfilter="team">Team</button>
+                    <button class="gal-filter-btn" data-gfilter="events">Events</button>
+                </div>
+
+                <!-- Photo Grid - Dynamic: add images here -->
+                <div class="photo-grid" id="photoGrid" data-aos="fade-up">
+                    <!-- HOW TO ADD PHOTOS: 
+                         Copy the block below and paste it inside this div.
+                         Change src to your image path.
+                         Change data-category to: factory, products, team, or events
+                         
+                    <div class="photo-item" data-category="factory">
+                        <img src="images/gallery/your-image.jpg" alt="Description">
+                        <div class="photo-overlay">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                            <span>Your Caption</span>
+                        </div>
+                    </div>
+                    -->
+
+                    <!-- EMPTY STATE - This will show when no photos are added -->
+                    <div class="gallery-empty-state" id="galleryEmptyState">
+                        <div class="empty-icon"><i class="fas fa-images"></i></div>
+                        <h3>Photos Coming Soon!</h3>
+                        <p>Our photo gallery will be updated shortly.<br>Check back soon to see our work in action.</p>
+                        <div class="empty-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upload Instructions (visible only in local dev, hide for production) -->
+                <div class="gallery-instructions" data-aos="fade-up">
+                    <div class="instructions-card">
+                        <div class="instr-icon"><i class="fas fa-info-circle"></i></div>
+                        <div class="instr-text">
+                            <h4>How to Add Photos</h4>
+                            <p>Place your images in the <code>images/gallery/</code> folder, then edit <code>gallery.html</code> and add photo items inside the <code>#photoGrid</code> div. See the comments in the code for the exact format.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Gallery -->
+            <div class="gallery-content hidden" id="videosTab">
+                <div class="video-grid" id="videoGrid" data-aos="fade-up">
+                    <!-- HOW TO ADD VIDEOS:
+                         Option 1 - YouTube Embed:
+                         Copy and paste this block, replace VIDEO_ID with your YouTube video ID:
+                         
+                    <div class="video-item">
+                        <div class="video-wrap">
+                            <iframe src="https://www.youtube.com/embed/VIDEO_ID" 
+                                    title="Your Video Title" frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>Your Video Title</h4>
+                            <p>Video description here</p>
+                        </div>
+                    </div>
+
+                         Option 2 - Local Video File:
+                    <div class="video-item">
+                        <div class="video-wrap">
+                            <video controls poster="images/gallery/video-thumb.jpg">
+                                <source src="videos/your-video.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="video-info">
+                            <h4>Your Video Title</h4>
+                            <p>Video description here</p>
+                        </div>
+                    </div>
+                    -->
+
+                    <!-- EMPTY STATE -->
+                    <div class="gallery-empty-state">
+                        <div class="empty-icon"><i class="fas fa-video"></i></div>
+                        <h3>Videos Coming Soon!</h3>
+                        <p>We're preparing amazing videos of our manufacturing process.<br>Stay tuned!</p>
+                        <div class="empty-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-instructions" data-aos="fade-up">
+                    <div class="instructions-card">
+                        <div class="instr-icon"><i class="fas fa-info-circle"></i></div>
+                        <div class="instr-text">
+                            <h4>How to Add Videos</h4>
+                            <p>For YouTube videos, copy the embed code from YouTube and paste it inside the <code>#videoGrid</code> div. For local videos, place them in a <code>videos/</code> folder. See the comments in the code for exact format.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-overlay" id="lightboxOverlay"></div>
+        <div class="lightbox-container">
+            <button class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></button>
+            <button class="lightbox-prev" id="lightboxPrev"><i class="fas fa-chevron-left"></i></button>
+            <button class="lightbox-next" id="lightboxNext"><i class="fas fa-chevron-right"></i></button>
+            <div class="lightbox-img-wrap">
+                <img src="" alt="" id="lightboxImg">
+            </div>
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+    </div>
+
+    <div class="marquee-section">
+        <div class="marquee-track">
+            <span><i class="fas fa-bolt"></i> STEEL MANUFACTURING</span>
+            <span><i class="fas fa-bolt"></i> WHOLESALE SUPPLIER</span>
+            <span><i class="fas fa-bolt"></i> QUALITY ASSURED</span>
+            <span><i class="fas fa-bolt"></i> BANSWARA, RAJASTHAN</span>
+            <span><i class="fas fa-bolt"></i> BULK ORDERS AVAILABLE</span>
+            <span><i class="fas fa-bolt"></i> STEEL MANUFACTURING</span>
+            <span><i class="fas fa-bolt"></i> WHOLESALE SUPPLIER</span>
+            <span><i class="fas fa-bolt"></i> QUALITY ASSURED</span>
+            <span><i class="fas fa-bolt"></i> BANSWARA, RAJASTHAN</span>
+            <span><i class="fas fa-bolt"></i> BULK ORDERS AVAILABLE</span>
+        </div>
+    </div>
+
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="footer-container">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-industry"></i>
+                        <div><span class="footer-logo-name">STEEL POINT</span><span class="footer-logo-sub">Manufacturing & Wholesale</span></div>
+                    </div>
+                    <p class="footer-desc">Your trusted partner in premium steel manufacturing and wholesale supply.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-btn"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="products.html"><i class="fas fa-chevron-right"></i> Products</a></li>
+                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-col">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="products.html"><i class="fas fa-chevron-right"></i> Steel Bars & Rods</a></li>
+                        <li><a href="products.html"><i class="fas fa-chevron-right"></i> Sheets & Plates</a></li>
+                        <li><a href="products.html"><i class="fas fa-chevron-right"></i> Angles & Channels</a></li>
+                        <li><a href="products.html"><i class="fas fa-chevron-right"></i> Pipes & Tubes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact-col">
+                    <h4>Contact Info</h4>
+                    <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Banswara, Rajasthan, India</span></div>
+                    <div class="footer-contact-item"><i class="fas fa-phone"></i><span>+91 XXXXX XXXXX</span></div>
+                    <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>info@steelpoint.in</span></div>
+                    <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Mon–Sat: 9 AM – 7 PM</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Steel Point. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color:#f97316"></i> in Banswara</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top"><i class="fas fa-chevron-up"></i></button>
+    <a href="https://wa.me/919828180990" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">Chat on WhatsApp</span>
+    </a>
+
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/gallery.js"></script>
+</body>
+</html>

@@ -1,0 +1,314 @@
+/* =========================================
+   STEEL POINT - ANIMATIONS CSS
+   ========================================= */
+
+/* AOS - Animate on Scroll Custom Implementations */
+[data-aos] {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+[data-aos="fade-up"] { transform: translateY(40px); }
+[data-aos="fade-down"] { transform: translateY(-40px); }
+[data-aos="fade-left"] { transform: translateX(40px); }
+[data-aos="fade-right"] { transform: translateX(-40px); }
+[data-aos="zoom-in"] { transform: scale(0.85); }
+[data-aos="zoom-out"] { transform: scale(1.15); }
+
+[data-aos].aos-animate {
+  opacity: 1;
+  transform: translate(0) scale(1);
+}
+
+/* Staggered delays for children */
+[data-aos-delay="100"] { transition-delay: 0.1s; }
+[data-aos-delay="200"] { transition-delay: 0.2s; }
+[data-aos-delay="300"] { transition-delay: 0.3s; }
+[data-aos-delay="400"] { transition-delay: 0.4s; }
+[data-aos-delay="500"] { transition-delay: 0.5s; }
+[data-aos-delay="600"] { transition-delay: 0.6s; }
+[data-aos-delay="650"] { transition-delay: 0.65s; }
+
+/* =========================================
+   PARTICLE ANIMATION
+   ========================================= */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: particleFloat linear infinite;
+  opacity: 0;
+}
+
+@keyframes particleFloat {
+  0% {
+    opacity: 0;
+    transform: translateY(100vh) scale(0);
+  }
+  10% { opacity: 1; }
+  90% { opacity: 0.5; }
+  100% {
+    opacity: 0;
+    transform: translateY(-100px) scale(1);
+  }
+}
+
+/* =========================================
+   GLOW PULSE ANIMATION
+   ========================================= */
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(249, 115, 22, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(249, 115, 22, 0.6), 0 0 80px rgba(249, 115, 22, 0.2);
+  }
+}
+
+.glow-pulse {
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+/* =========================================
+   TYPING ANIMATION
+   ========================================= */
+.typing-cursor::after {
+  content: '|';
+  animation: blink-cursor 0.8s step-end infinite;
+  color: var(--primary);
+}
+
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* =========================================
+   SPIN ANIMATIONS
+   ========================================= */
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spin-slow { animation: spinSlow 20s linear infinite; }
+
+/* =========================================
+   COUNTER ANIMATION
+   ========================================= */
+.count-up {
+  display: inline-block;
+  transition: all 0.1s ease;
+}
+
+/* =========================================
+   CARD HOVER 3D
+   ========================================= */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+.card-3d:hover {
+  transform: rotateY(5deg) rotateX(3deg) translateZ(10px);
+}
+
+/* =========================================
+   RIPPLE EFFECT
+   ========================================= */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(0);
+  animation: rippleEffect 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes rippleEffect {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* =========================================
+   LINE DRAW ANIMATION
+   ========================================= */
+@keyframes drawLine {
+  from { stroke-dashoffset: 1000; }
+  to { stroke-dashoffset: 0; }
+}
+
+/* =========================================
+   SLIDE IN FROM DIFFERENT DIRECTIONS
+   ========================================= */
+@keyframes slideInLeft {
+  from { transform: translateX(-60px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(60px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from { transform: translateY(60px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInDown {
+  from { transform: translateY(-60px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* =========================================
+   SHIMMER LOADING
+   ========================================= */
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg,
+    rgba(255,255,255,0.03) 25%,
+    rgba(255,255,255,0.08) 50%,
+    rgba(255,255,255,0.03) 75%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* =========================================
+   BOUNCE ANIMATION
+   ========================================= */
+@keyframes bounceIn {
+  0% { transform: scale(0); opacity: 0; }
+  60% { transform: scale(1.1); opacity: 1; }
+  80% { transform: scale(0.95); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.bounce-in {
+  animation: bounceIn 0.6s cubic-bezier(0.36, 0.07, 0.19, 0.97) forwards;
+}
+
+/* =========================================
+   WAVE ANIMATION
+   ========================================= */
+@keyframes wave {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(1.5); }
+}
+
+/* =========================================
+   NAVBAR SCROLL ANIMATION
+   ========================================= */
+#navbar {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* =========================================
+   PAGE TRANSITION
+   ========================================= */
+.page-transition-overlay {
+  position: fixed; inset: 0;
+  background: var(--dark); z-index: 9998;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* =========================================
+   TEXT REVEAL ANIMATION
+   ========================================= */
+.text-reveal {
+  overflow: hidden;
+}
+.text-reveal-inner {
+  display: inline-block;
+  transform: translateY(100%);
+  animation: revealText 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes revealText {
+  to { transform: translateY(0); }
+}
+
+/* =========================================
+   GRADIENT ANIMATION
+   ========================================= */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.gradient-animated {
+  background-size: 200% 200%;
+  animation: gradientShift 4s ease infinite;
+}
+
+/* =========================================
+   STAR RATING ANIMATION
+   ========================================= */
+.stars i {
+  animation: starPop 0.3s ease forwards;
+  opacity: 0;
+  transform: scale(0);
+}
+.stars i:nth-child(1) { animation-delay: 0.1s; }
+.stars i:nth-child(2) { animation-delay: 0.2s; }
+.stars i:nth-child(3) { animation-delay: 0.3s; }
+.stars i:nth-child(4) { animation-delay: 0.4s; }
+.stars i:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes starPop {
+  from { opacity: 0; transform: scale(0) rotate(-20deg); }
+  to { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+/* =========================================
+   LOGO HOVER
+   ========================================= */
+.nav-logo:hover .logo-icon {
+  animation: logoWiggle 0.5s ease;
+}
+
+@keyframes logoWiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg) scale(1.1); }
+  75% { transform: rotate(10deg) scale(1.1); }
+}
+
+/* =========================================
+   BUTTON ACTIVE PRESS
+   ========================================= */
+.btn-primary:active, .btn-submit:active {
+  transform: scale(0.97);
+}
+
+/* =========================================
+   MOBILE MENU ANIMATION
+   ========================================= */
+.nav-links .nav-link {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+.nav-links.open .nav-link {
+  opacity: 1;
+  transform: translateX(0);
+}
+.nav-links.open .nav-link:nth-child(1) { transition: all 0.4s ease 0.1s; }
+.nav-links.open .nav-link:nth-child(2) { transition: all 0.4s ease 0.15s; }
+.nav-links.open .nav-link:nth-child(3) { transition: all 0.4s ease 0.2s; }
+.nav-links.open .nav-link:nth-child(4) { transition: all 0.4s ease 0.25s; }
+.nav-links.open .nav-link:nth-child(5) { transition: all 0.4s ease 0.3s; }
+
+/* Reset for desktop */
+@media (min-width: 901px) {
+  .nav-links .nav-link {
+    opacity: 1;
+    transform: none;
+  }
+}
