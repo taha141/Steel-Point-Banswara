@@ -1,57 +1,67 @@
 /* =========================================
    STEEL POINT - PRODUCTS PAGE JS
-   ========================================= */
+========================================= */
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 
-  // =========================================
-  // PRODUCT FILTER
-  // =========================================
   const filterButtons = document.querySelectorAll('.filter-btn');
   const productCards = document.querySelectorAll('.product-main-card');
 
+  /* =========================
+     PRODUCT FILTER
+  ========================= */
   if (filterButtons.length && productCards.length) {
 
-    filterButtons.forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        // Update active button
-        filterButtons.forEach(function(b) { b.classList.remove('active'); });
-        btn.classList.add('active');
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', function () {
 
-        const filter = btn.getAttribute('data-filter');
+        filterButtons.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
 
-        productCards.forEach(function(card, index) {
-          const category = card.getAttribute('data-category');
-          const shouldShow = filter === 'all' || category === filter;
+        const filter = this.dataset.filter;
 
-          if (shouldShow) {
-            card.classList.remove('hidden');
-            card.style.opacity = '0';
-            card.style.transform = 'scale(0.9) translateY(20px)';
+        productCards.forEach(card => {
+          const category = card.dataset.category;
 
-            setTimeout(function() {
-              card.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+          if (filter === 'all' || category === filter) {
+            card.style.display = 'block';
+
+            setTimeout(() => {
               card.style.opacity = '1';
-              card.style.transform = 'scale(1) translateY(0)';
-            }, index * 60);
-          } else {
-            card.style.transition = 'all 0.3s ease';
-            card.style.opacity = '0';
-            card.style.transform = 'scale(0.9)';
+              card.style.transform = 'translateY(0)';
+            }, 50);
 
-            setTimeout(function() {
-              card.classList.add('hidden');
-            }, 300);
+          } else {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+
+            setTimeout(() => {
+              card.style.display = 'none';
+            }, 250);
           }
         });
+
       });
     });
+
   }
 
-  // =========================================
-  // PRODUCT CARD HOVER EFFECT
-  // =========================================
-  productCards.forEach(function(card) {
-    card.addEventListener('mouseenter', function() {
-      // Add a glow effect to the card
-      this.style.boxShadow = '0 20px 60px rgba(0,0,0,0.5), 0 0 30
+  /* =========================
+     CARD HOVER EFFECT
+  ========================= */
+
+  productCards.forEach(card => {
+
+    card.addEventListener('mouseenter', function () {
+      if (window.innerWidth > 768) {
+        this.style.transform = 'translateY(-8px)';
+      }
+    });
+
+    card.addEventListener('mouseleave', function () {
+      this.style.transform = 'translateY(0)';
+    });
+
+  });
+
+});
