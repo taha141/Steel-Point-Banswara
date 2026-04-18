@@ -1702,3 +1702,38 @@ input, select, textarea { font-family: inherit; }
     height: auto;
   }
 }
+
+@media (max-width: 768px){
+
+  .products-main-grid{
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .product-main-card{
+    width: 100%;
+  }
+
+  .product-card-img{
+    height: 220px;
+  }
+
+  .filter-buttons{
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    flex-wrap: nowrap;
+    scrollbar-width: none;
+  }
+
+  .filter-buttons::-webkit-scrollbar{
+    display:none;
+  }
+
+  .filter-btn{
+    white-space: nowrap;
+    flex: 0 0 auto;
+  }
+
+}
