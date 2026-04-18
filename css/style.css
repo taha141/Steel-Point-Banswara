@@ -1644,9 +1644,8 @@ input, select, textarea { font-family: inherit; }
   }
 
   .hero-title,
-  h1{
-    font-size: 2rem !important;
-    line-height: 1.2;
+  {
+    line-height: 1.15;
   }
 
   h2{
@@ -1878,4 +1877,58 @@ html, body {
 /* Floating icons can cause overflow */
 .hero-floating-elements {
   overflow: hidden;
+}
+
+/* =====================================
+   FINAL HERO FIX
+===================================== */
+
+html,body{
+  overflow-x:hidden;
+}
+
+@media (max-width:768px){
+
+  #hero{
+    min-height:100svh;
+    padding:100px 0 60px;
+  }
+
+  .hero-content{
+    padding-top:0 !important;
+    text-align:center;
+  }
+
+  .title-line-1{
+    font-size:clamp(1.8rem,7vw,3rem);
+    letter-spacing:1px;
+  }
+
+  .title-line-2{
+    font-size:clamp(2.2rem,9vw,4rem);
+    letter-spacing:1px;
+  }
+
+  .title-line-3{
+    font-size:clamp(1.8rem,7vw,3rem);
+    letter-spacing:1px;
+  }
+
+  .hero-subtitle{
+    font-size:1rem;
+    line-height:1.6;
+    max-width:100%;
+  }
+
+  .hero-buttons{
+    flex-direction:column;
+  }
+
+  .hero-buttons a{
+    width:100%;
+  }
+
+  .hero-scroll-indicator{
+    display:none;
+  }
 }
