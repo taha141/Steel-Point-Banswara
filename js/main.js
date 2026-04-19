@@ -316,3 +316,30 @@ function throttle(func, limit) {
     }
   };
 }
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const tabs = document.querySelectorAll(".gallery-tab");
+    const photosTab = document.getElementById("photosTab");
+    const videosTab = document.getElementById("videosTab");
+
+    tabs.forEach(tab => {
+        tab.addEventListener("click", function () {
+
+            // Remove active from all buttons
+            tabs.forEach(t => t.classList.remove("active"));
+            this.classList.add("active");
+
+            const selected = this.getAttribute("data-tab");
+
+            if (selected === "photos") {
+                photosTab.classList.remove("hidden");
+                videosTab.classList.add("hidden");
+            } else {
+                videosTab.classList.remove("hidden");
+                photosTab.classList.add("hidden");
+            }
+        });
+    });
+});
+</script>
