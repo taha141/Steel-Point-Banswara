@@ -317,7 +317,7 @@ function throttle(func, limit) {
   };
 }
 
-<script>
+// ========================GALLERY JS =====================
 document.addEventListener("DOMContentLoaded", function () {
     const tabs = document.querySelectorAll(".gallery-tab");
     const photosTab = document.getElementById("photosTab");
@@ -342,4 +342,3 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
-</script>
