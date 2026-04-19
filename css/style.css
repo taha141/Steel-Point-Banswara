@@ -1678,6 +1678,10 @@ input, select, textarea { font-family: inherit; }
     grid-template-columns: 1fr;
   }
 
+   .hidden {
+    display: none;
+   }
+
   .hero-stats{
     flex-direction: column;
     gap: 12px;
